@@ -6,7 +6,7 @@ SCimple way of reproducing your Seurat UMAP with RNA velocities overlayed
 
 
 
-##Now switch to Python
+## Now switch to python
 you will need to install the requisite packages if you havent already
 ```markdown
 pip install -U scvelo
