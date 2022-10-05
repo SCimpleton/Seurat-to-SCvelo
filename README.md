@@ -1,18 +1,18 @@
 # Seurat-to-SCvelo
 SCimple way of reproducing your Seurat UMAP with RNA velocities overlayed
 
-'''markdown
+```markdown
 ##NB make sure special characters are removed from cluster IDs##
 
 #view the metadata to get a handle on the cell IDs seurat has created#
 limb1@meta.data$cell<- rownames(limb1@meta.data)
 meta<- limb1@meta.data
-'''
+```
 At this stage you will need to replace the numbers and underscores to make each cell the same as it appears in the velocyto loom output.
 Velocyto gets round the duplicate cell names by adding a batch key from the 10x channel. For some reason it then seems to add an appended 'x'
 so swap appended characters for the corresponding batch (hopefully this was metadata in your object)
 
-'''markdown
+```markdown
 limb1@meta.data$cell<- gsub('1_1_1_1', '1-lane1', limb1@meta.data$cell)
 limb1@meta.data$cell<- gsub('1_2_1_1', '1-lane2', limb1@meta.data$cell)
 limb1@meta.data$cell<- gsub('1_1_1', '1-lane3', limb1@meta.data$cell)
@@ -67,7 +67,7 @@ clusters$clusters <- gsub("celltypeC", "#33a02c", clusters$clusters)
 
 #write the file
 write.csv(clusters, file = "clusters_obs_seurat.csv", row.names = F)
-'''
+```
 
 
 ## Now switch to python
