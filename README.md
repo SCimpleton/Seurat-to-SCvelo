@@ -112,7 +112,7 @@ sample_obs
 #now subset by removing irrelevant cells form the loom file from velocyto
 sample_one = sample_one[np.isin(sample_one.obs.index,sample_obs["x"])]
 
-#check all removed appropriately ie remaining cells mateches those in the seurat object
+#check all removed appropriately ie remaining cells matches those in the seurat object
 sample_one.obs.index
 
 #convert index to dataframe
